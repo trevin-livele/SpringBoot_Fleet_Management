@@ -3,11 +3,11 @@ package com.trevin.FleetMangmt.services;
 import java.util.List;
 import java.util.Optional;
 
+import com.trevin.FleetMangmt.models.User;
+import com.trevin.FleetMangmt.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.kindsonthegenius.fleetms.models.User;
-import com.kindsonthegenius.fleetms.repositories.UserRepository;
 
 @Service
 public class UserService {

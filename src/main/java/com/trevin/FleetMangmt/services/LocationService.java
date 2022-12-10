@@ -3,11 +3,11 @@ package com.trevin.FleetMangmt.services;
 import java.util.List;
 import java.util.Optional;
 
+import com.trevin.FleetMangmt.models.Location;
+import com.trevin.FleetMangmt.repositories.LocationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.kindsonthegenius.fleetms.models.Location;
-import com.kindsonthegenius.fleetms.repositories.LocationRepository;
 
 
 @Service

@@ -3,11 +3,11 @@ package com.trevin.FleetMangmt.services;
 import java.util.List;
 import java.util.Optional;
 
+import com.trevin.FleetMangmt.models.Vehicle;
+import com.trevin.FleetMangmt.repositories.VehicleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.kindsonthegenius.fleetms.models.Vehicle;
-import com.kindsonthegenius.fleetms.repositories.VehicleRepository;
 
 @Service
 public class VehicleService {

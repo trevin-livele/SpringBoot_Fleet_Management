@@ -3,11 +3,11 @@ package com.trevin.FleetMangmt.services;
 import java.util.List;
 import java.util.Optional;
 
+import com.trevin.FleetMangmt.models.Invoice;
+import com.trevin.FleetMangmt.repositories.InvoiceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.kindsonthegenius.fleetms.models.Invoice;
-import com.kindsonthegenius.fleetms.repositories.InvoiceRepository;
 
 @Service
 public class InvoiceService {

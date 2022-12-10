@@ -3,11 +3,11 @@ package com.trevin.FleetMangmt.services;
 import java.util.List;
 import java.util.Optional;
 
+import com.trevin.FleetMangmt.models.JobTitle;
+import com.trevin.FleetMangmt.repositories.JobTitleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.kindsonthegenius.fleetms.models.JobTitle;
-import com.kindsonthegenius.fleetms.repositories.JobTitleRepository;
 
 @Service
 public class JobTitleService {

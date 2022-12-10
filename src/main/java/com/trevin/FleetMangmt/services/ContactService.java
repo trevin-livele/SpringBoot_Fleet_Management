@@ -3,11 +3,11 @@ package com.trevin.FleetMangmt.services;
 import java.util.List;
 import java.util.Optional;
 
+import com.trevin.FleetMangmt.models.Contact;
+import com.trevin.FleetMangmt.repositories.ContactRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.kindsonthegenius.fleetms.models.Contact;
-import com.kindsonthegenius.fleetms.repositories.ContactRepository;
 
 @Service
 public class ContactService {

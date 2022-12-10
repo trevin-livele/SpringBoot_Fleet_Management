@@ -3,11 +3,11 @@ package com.trevin.FleetMangmt.services;
 import java.util.List;
 import java.util.Optional;
 
+import com.trevin.FleetMangmt.models.Country;
+import com.trevin.FleetMangmt.repositories.CountryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.kindsonthegenius.fleetms.models.Country;
-import com.kindsonthegenius.fleetms.repositories.CountryRepository;
 
 @Service
 public class CountryService {
