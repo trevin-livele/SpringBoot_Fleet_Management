@@ -10,18 +10,20 @@
     <link rel="shortcut icon" href="img/favicon.png">
 
     <title>Country</title>
-
-    <!-- Bootstrap CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- bootstrap theme -->
-    <link href="css/bootstrap-theme.css" rel="stylesheet">
-    <!--external css-->
     <!-- font icon -->
     <link href="css/elegant-icons-style.css" rel="stylesheet" />
     <link href="css/font-awesome.min.css" rel="stylesheet" />
     <!-- Custom styles -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style-responsive.css" rel="stylesheet" />
+
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+
+
+
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
     <!--[if lt IE 9]>
@@ -401,32 +403,150 @@
             </div>
             <!-- page start-->
 
-            <h1>Country here</h1>
+
+
+
+
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">New Country</button>
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Description</th>
+                    <th>Capital</th>
+                    <th>Code</th>
+                    <th>Actions</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="country:${countries}">
+                    <td th:text="${country.id}"></td>
+                    <td th:text="${country.description}"></td>
+                    <td th:text="${country.capital}"></td>
+                    <td th:text="${country.code}"></td>
+                    <td>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">Edit</button>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
             <!-- page end-->
         </section>
     </section>
-    <!--main content end-->
-    <div class="text-right">
-        <div class="credits">
-            <!--
-              All the links in the footer should remain intact.
-              You can delete the links only if you purchased the pro version.
-              Licensing information: https://bootstrapmade.com/license/
-              Purchase the pro version form: https://bootstrapmade.com/buy/?theme=NiceAdmin
-            -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-        </div>
-    </div>
 </section>
 <!-- container section end -->
+
+
+
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form th:action="@{/countries/addNew}" method="post">
+                    <div class="mb-3">
+                        <label  class="col-form-label">Description:</label>
+                        <input type="text" class="form-control"  name="description">
+                    </div>
+
+                    <div class="mb-3">
+                        <label  class="col-form-label">Capital:</label>
+                        <input type="text" class="form-control" name="capital">
+                    </div>  <div class="mb-3">
+                    <label  class="col-form-label">code:</label>
+                    <input type="text" class="form-control"  name="code">
+                </div>  <div class="mb-3">
+                    <label  class="col-form-label">Continent:</label>
+                    <input type="text" class="form-control"  name="continent">
+                </div>
+                    <div class="mb-3">
+                        <label  class="col-form-label">Nationality:</label>
+                        <input type="text" class="form-control"  name="nationality">
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5">Update Country</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form th:action="@{/countries/addNew}" method="post">
+                    <div class="mb-3">
+                        <label  class="col-form-label">Description:</label>
+                        <input type="text" class="form-control" id="descriptionEdit"  name="description">
+                    </div>
+
+                    <div class="mb-3">
+                        <label  class="col-form-label">Capital:</label>
+                        <input type="text" class="form-control" id="capitalEdit" name="capital">
+                    </div>  <div class="mb-3">
+                    <label  class="col-form-label">code:</label>
+                    <input type="text" class="form-control" id="codeEdit" name="code">
+                </div>  <div class="mb-3">
+                    <label  class="col-form-label">Continent:</label>
+                    <input type="text" class="form-control" id="continentEdit" name="continent">
+                </div>
+                    <div class="mb-3">
+                        <label  class="col-form-label">Nationality:</label>
+                        <input type="text" class="form-control" id="nationalityEdit" name="nationality">
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
 <!-- javascripts -->
+<script src="js/country.js"></script>
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <!-- nice scroll -->
 <script src="js/jquery.scrollTo.min.js"></script>
 <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
-<!--custome script for all page-->
+<!--customer script for all page-->
 <script src="js/scripts.js"></script>
+
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
 
 
 </body>
